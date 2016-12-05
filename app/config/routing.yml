@@ -1,0 +1,4 @@
+nvbooster_testing:
+    resource: "@NvboosterTestingBundle/Controller/"
+    type:     annotation
+    prefix:   /
