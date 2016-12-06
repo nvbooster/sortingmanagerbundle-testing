@@ -1,0 +1,12 @@
+{% extends 'NvboosterTestingBundle::base.html.twig' %}
+
+{% block content %}
+<h1>Testing session storage</h1>
+
+<h3>Current sorting</h3>
+<ul class="sorting">
+    {% for column, order in config.sortingsequence %}
+        <li>{{ column }} - {% if order > 0 %}ASC{% else %}DESC{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

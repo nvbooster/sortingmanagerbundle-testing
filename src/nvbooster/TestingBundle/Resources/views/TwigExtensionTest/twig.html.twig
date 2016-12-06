@@ -1,0 +1,41 @@
+{% extends 'NvboosterTestingBundle::base.html.twig' %}
+
+{% block content %}
+<style>
+    .sorting li a {
+        color: red;
+        text-decoration: none;        
+    }
+    .sorting li a:hover {
+        text-decoration: underline;
+    }
+    .sm_column:after {
+        content: "↑↓";
+        width: 50px;
+        text-align: center;
+        display: inline-block;
+    }
+    .sm_column.sm_asc:after {
+        content: "↑";
+    }
+    .sm_column.sm_desc:after {
+        content: "↓";
+    }
+    
+    #cname .sm_column.sm_asc {color: green}
+    #cbd .sm_column.sm_desc {color: green}
+    #cstate .sm_column {color: green}
+    #cstate .sm_column.sm_asc {color: red}
+    #cstate .sm_column.sm_desc {color: red}
+    #cextra {color: green}
+</style>
+<h1>Testing twig extension</h1>
+
+<h3>Current sorting</h3>
+<ul class="sorting">
+    <li><span id="cname">{{ sortable_column(control, 'name') }}</span> (Expected: Person`s name)</li>
+    <li><span id="cbd">{{ sortable_column(control, 'birthdate') }}</span> (Expected: His birthday)</li>
+    <li><span id="cstate">{{ sortable_column(control, 'state') }}</span> (Expected: His current state)</li>
+    <li><span id="cextra">{{ sortable_column(control, 'extra') }}</span> (Expected: Extra)</li>
+</ul>
+{% endblock %}
