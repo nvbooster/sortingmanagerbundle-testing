@@ -4,19 +4,19 @@ services:
         factory: ["@nvbooster_sortingmanager", createConfig]
         arguments: [servicesort, { storage: session }]
         calls:
-            - [addColumn, ["name", "a.name"]]        
+            - [addColumn, ["name", "a.name"]]
             - [addColumn, ["description", "a.description"]]
             - [addColumn, ["created", "a.created"]]
             - [setDefaultSorting, [{ created: 1 }]]
         tags:
             - { name: "sorting_config" }
-    
+
     custom_sorting_config:
         class: nvbooster\TestingBundle\SortingConfig\CustomConfig
         arguments: ["@nvbooster_sortingmanager"]
         tags:
             - { name: "sorting_config", alias: customsort }
-            
+
     custom_storage_config:
         class: nvbooster\SortingManager\ConfigStorage\ArrayStorage
         tags:
