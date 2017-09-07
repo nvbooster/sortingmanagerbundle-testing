@@ -13,3 +13,4 @@
 /.buildpath
 /composer.lock
 /.settings/
+/app/

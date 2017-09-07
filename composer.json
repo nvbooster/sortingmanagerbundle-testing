@@ -1,71 +1,65 @@
 {
-    "name": "nvbooster/sortingmanager-testing",
-    "license": "MIT",
-    "type": "project",
-    "description": "Testing app for nvbooster/sortingmanagerbundle",
-    "autoload": {
-        "psr-0": { "": "src/" }
-    },
-    "repositories" : [        
-        {
-            "type" : "git",
-            "url" : "https://github.com/nvbooster/sortingmanager.git"
-        },
-        {
-            "type" : "git",
-            "url" : "https://github.com/nvbooster/sortingmanager-bundle.git"
-        }
-    ],
-    "require": {
-        "php": ">=5.5",
-        "symfony/symfony": "2.7.*",
-        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
-        "doctrine/dbal": "<2.5",
-        "doctrine/doctrine-bundle": "~1.2",
-        "twig/extensions": "~1.0",
-        "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~3.0,>=3.0.12",
-        "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0",
-        "nvbooster/sortingmanager": "dev-master",
-        "nvbooster/sortingmanagerbundle": "dev-master",
-        "matthiasnoback/symfony-dependency-injection-test": "^1.1"
-    },
-    "require-dev": {
-        "sensio/generator-bundle": "~2.3"
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "SymfonyStandard\\Composer::hookRootPackageInstall"
-        ],
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ]
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.5-dev"
-        }
-    }
+	"name" : "nvbooster/sortingmanager-testing",
+	"license" : "MIT",
+	"type" : "project",
+	"description" : "Testing app for nvbooster/sortingmanagerbundle",
+	"autoload" : {
+		"psr-0" : {
+			"" : "src/"
+		},
+		"psr-4" : {
+		    "nvbooster\\SortingManagerBundle\\" : "../sortingmanager-bundle"
+		}
+	},
+	"repositories" : [{
+		"type" : "git",
+		"url" : "https://github.com/nvbooster/sortingmanager.git"
+	}, {
+		"type" : "git",
+		"url" : "https://github.com/nvbooster/sortingmanager-bundle.git"
+	}],
+	"require" : {
+		"php" : ">=5.5",
+		"symfony/symfony" : "~2.7.0",
+		"sensio/distribution-bundle": "~4.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+		"doctrine/orm" : "~2.2,>=2.2.3,<2.5",
+		"doctrine/dbal" : "<2.5",
+		"doctrine/doctrine-bundle" : "~1.2",
+		"twig/extensions" : "~1.0",
+		"symfony/monolog-bundle" : "~2.4",
+		"incenteev/composer-parameter-handler" : "~2.0",
+		"nvbooster/sortingmanagerbundle" : "~2.0",
+		"matthiasnoback/symfony-dependency-injection-test" : "^1.1"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~5.6"
+	},
+	"scripts" : {
+		"post-install-cmd" : [
+			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+		],
+		"post-update-cmd" : [
+			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+		]
+	},
+	"config" : {
+		"bin-dir" : "bin"
+	},
+	"extra" : {
+		"symfony-app-dir" : "app",
+		"symfony-web-dir" : "web",
+		"incenteev-parameters" : {
+			"file" : "app/config/parameters.yml"
+		}
+	},
+	"minimum-stability" : "dev"
 }
